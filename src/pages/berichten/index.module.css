@@ -1,0 +1,25 @@
+.kader{
+    margin: 10px;
+    border: 2px solid navy;
+    border-radius: 8px;
+    background-color: #C7C8CC;
+    
+    
+}
+.textss{
+    text-decoration: none;
+    text-align: center;
+    
+}
+.date{
+    font-style: oblique;
+}
+
+h2{
+    text-align: center;
+}
+div {
+    
+    color:black
+}
+
