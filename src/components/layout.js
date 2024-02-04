@@ -1,12 +1,13 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import {
-  container,
+  main,
   nav,
   navLinks,
   navLinkItem,
   navLinkText,
-  siteTitle
+  siteTitle,
+  balk
 } from './layout.module.css'
 
 const Layout = ({ pageTitle, children }) => {
@@ -21,35 +22,40 @@ const Layout = ({ pageTitle, children }) => {
   `)
 
   return (
-    <div className={container}>
-      <title>{pageTitle} | {data.site.siteMetadata.title}</title>
-      <nav className={nav}>
-        <header className={siteTitle}>
-          <h1>{data.site.siteMetadata.title}</h1>
-        </header>
-        <ul className={navLinks}>
-          <li>
-          </li>
-          <li className={navLinkItem}>
-            <Link className={navLinkText} to="/">
-              Home
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link className={navLinkText} to="/about">
-              About
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link className={navLinkText} to="/berichten">
-              Berichten
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <main>
+    <div>
+
+      <div className={balk}>
+        <title>{pageTitle} | {data.site.siteMetadata.title}</title>
+        <nav className={nav}>
+          <header className={siteTitle}>
+            <h1>{data.site.siteMetadata.title}</h1>
+          </header>
+          <ul className={navLinks}>
+            <li>
+            </li>
+            <li className={navLinkItem}>
+              <Link className={navLinkText} to="/" activeStyle={{color:"dodgerblue"}}>
+                Home
+              </Link>
+            </li>
+            <li className={navLinkItem}>
+              <Link className={navLinkText} to="/about" activeStyle={{color:"dodgerblue"}}>
+                Over de stage
+              </Link>
+            </li>
+            <li className={navLinkItem}>
+              <Link className={navLinkText} to="/berichten" activeStyle={{color: "dodgerblue"}}>
+                Blogpagina
+              </Link>
+            </li>
+            
+          </ul>
+        </nav>
+
+      </div>
+      <div className={main}>
         {children}
-      </main>
+      </div>
     </div>
   )
 }

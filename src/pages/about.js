@@ -2,30 +2,34 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { graphql } from 'gatsby'
+import { title, myimage, myself, mytext,afstand } from './about.module.css'
 
-const AboutPage = ({data: {wpPage:{aboutPageFields}}}) => {
+const AboutPage = ({ data: { wpPage: { aboutPageFields } } }) => {
   const image = getImage(aboutPageFields.imageOfMe.localFile)
   return (
-    <Layout pageTitle="About Us">
+    <Layout pageTitle="Over de stage">
       <div>
-      <h1>{aboutPageFields.title}</h1>
-      <p>{aboutPageFields.smallDescription}</p>
+        <h1 className={title}>{aboutPageFields.title}</h1>
       </div>
-      <div>
-      <h2>{aboutPageFields.titleIntroduction}</h2>
-      <p>{aboutPageFields.introduction}</p>
-      <GatsbyImage
-          image={image}
-          alt={aboutPageFields.imageOfMe.altText}
-        />
+      <div className={afstand}>
+        <h2 className={title}>{aboutPageFields.titleIntroduction}</h2>
+        <div className={myself}>
+          <p className={mytext}>{aboutPageFields.introduction}</p>
+          <GatsbyImage
+            className={myimage}
+            image={image}
+            alt={aboutPageFields.imageOfMe.altText}
+          />
+        </div>
       </div>
-      <div>
-      <h2 >{aboutPageFields.titleCompany}</h2>
-      <p>{aboutPageFields.company}</p>
+      <div className={afstand}>
+      <a href="https://www.amotek.be" ><h2 className={title}>{aboutPageFields.titleCompany}</h2></a> 
+        <p>{aboutPageFields.company}</p>
+        
       </div>
-      <div>
-      <h2>{aboutPageFields.titleWhat}</h2>
-      <p>{aboutPageFields.what}</p>
+      <div className={afstand}>
+        <h2 className={title}>{aboutPageFields.titleWhat}</h2>
+        <p>{aboutPageFields.what}</p>
       </div>
 
     </Layout>
@@ -38,7 +42,6 @@ query{
   wpPage {
     aboutPageFields {
       title
-      smallDescription
       titleIntroduction
       introduction
       imageOfMe {

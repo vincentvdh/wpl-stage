@@ -4,7 +4,8 @@ import Layout from '../../components/layout'
 import {
   kader,
   textss,
-  date
+  date,
+  title
 
 } from './index.module.css'
 
@@ -13,7 +14,7 @@ const BerichtenPage = ({ data: { allWpBericht: { edges } } }) => {
   return (
     <main>
       <Layout pageTitle="Blog pagina">
-        <h1>Blog pagina</h1>
+        <h1 className={title}>Blogpagina</h1>
         <p>Hier kan u de wekelijkse updates terugvinden.</p>
         <div >
           {edges.map((item) => {
@@ -23,7 +24,7 @@ const BerichtenPage = ({ data: { allWpBericht: { edges } } }) => {
               
                 <Link className= {textss}to={`/berichten/${slug}`}>
                   <div className={kader}>
-                    <h2 key={item.node.id}>{bericht.title}</h2>
+                    <h2 key={item.node.id} className={title}>{bericht.title}</h2>
                     <p key={item.node.id}>{bericht.description}</p>
                     <p className={date}key={item.node.id}>{bericht.date}</p>
                   </div>

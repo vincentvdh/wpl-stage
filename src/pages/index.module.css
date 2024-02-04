@@ -1,9 +1,13 @@
+.title{
+    font-family: "Berlin Sans FB";
+    font-weight: lighter;
+}
 .kader{
     margin: 10px;
     border: 2px solid navy;
     border-radius: 8px;
-    background-color: #C7C8CC;
-    
+    background-color: rgba(0, 0, 128, 0.204);
+
     
 }
 .textss{

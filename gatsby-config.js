@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "WPL-Stage",
-    description: "WPL-stage is a site about my Internship.",
+    description: "WPL-stage is een website die gaat over mijn stage",
     author: "@gatsbyjs",
     siteUrl: "https://gatsbystarterdefaultsource.gatsbyjs.io/",
   },

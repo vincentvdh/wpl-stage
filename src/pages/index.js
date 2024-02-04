@@ -2,6 +2,7 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import {
+  title,
   kader,
   textss,
   date
@@ -13,11 +14,11 @@ const IndexPage = ({data: {wpPage: {homePageFields}, allWpBericht: {edges} }}) =
     <main>
       <Layout pageTitle="Home">
       <div>
-        <h1>{homePageFields.titelss}</h1>
+        <h1 className={title}>{homePageFields.titelss}</h1>
         <p>{homePageFields.smallDescription}</p>
       </div>
       <div className={kader}>
-        <h2>{last.node.berichtenFields.title}</h2>
+        <h2 className={title}>{last.node.berichtenFields.title}</h2>
         <p className={textss}>{last.node.berichtenFields.description}</p>
         <p className={date}>{last.node.berichtenFields.date}</p>
       </div>
