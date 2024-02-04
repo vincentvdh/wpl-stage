@@ -71,8 +71,11 @@ body {
   font-weight: 600;
   margin-right: auto;
   margin-left: 5%;
+  
 }
-
+.siteTitleColor{
+  color:white;
+}
 .main{
   width: 100%;
   max-width: 1080px;

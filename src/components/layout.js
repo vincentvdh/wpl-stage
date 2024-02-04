@@ -7,6 +7,7 @@ import {
   navLinkItem,
   navLinkText,
   siteTitle,
+  siteTitleColor,
   balk
 } from './layout.module.css'
 
@@ -28,7 +29,10 @@ const Layout = ({ pageTitle, children }) => {
         <title>{pageTitle} | {data.site.siteMetadata.title}</title>
         <nav className={nav}>
           <header className={siteTitle}>
-            <h1>{data.site.siteMetadata.title}</h1>
+          <Link className={siteTitleColor} to="/">
+          <h1>{data.site.siteMetadata.title}</h1>
+              </Link>
+            
           </header>
           <ul className={navLinks}>
             <li>
